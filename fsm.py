@@ -17,7 +17,7 @@ class AddState(StatesGroup):
                 update_obj[f"{len_ + 1}"] = {"full_name": full_name, "id": id_}
 
         with open("channels.json", "w", encoding="utf-8") as file:
-            if len_ == 0:
-                json.dump({f"{len_ + 1}": {"full_name": full_name, "id": id_}}, file, indent=4)
-            else:
+            if len_ != 0:
                 json.dump(update_obj, file, indent=4)
+            else:
+                json.dump({f"{len_ + 1}": {"full_name": full_name, "id": id_}}, file, indent=4)
