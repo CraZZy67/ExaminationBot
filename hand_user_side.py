@@ -12,11 +12,11 @@ router_for_user = Router()
 async def handling_link(message: Message, command: CommandObject, bot: Bot):
     args_list = command.args.split("s")
 
-    with open("data.json", "r", encoding="utf-8") as f:
-        required_link = json.loads(f.read())[args_list[0]][args_list[1]]
+    with open("topics.json", "r", encoding="utf-8") as file:
+        required_link = json.loads(file.read())[args_list[0]][args_list[1]]
 
-    with open("id.json", "r", encoding="utf-8") as f:
-        chat_id = json.loads(f.read())[args_list[0]]
+    with open("channels.json", "r", encoding="utf-8") as file:
+        chat_id = json.loads(file.read())[args_list[0]]
         examination = await bot.get_chat_member(chat_id=chat_id, user_id=message.from_user.id)
 
     if examination.status == "left":
