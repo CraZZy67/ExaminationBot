@@ -25,7 +25,7 @@ def kb_channels_list(mode: str | None = None):
     else:
         builder = InlineKeyboardBuilder()
 
-        builder.button(text="Удалить канал", callback_data="delete_chanel")
+        builder.button(text="Отчистить все каналы и посты!", callback_data="delete_channels")
         builder.button(text="Добавить канал", callback_data="add_channel")
         builder.button(text="Назад", callback_data="back_to_menu")
         builder.adjust(2, 1)

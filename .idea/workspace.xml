@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Сделал вывод списка постов у тг каналов с кнопками добавления и удаления поста">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channels.json" beforeDir="false" afterPath="$PROJECT_DIR$/channels.json" afterDir="false" />
+    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Сделал добавление тг постов">
       <change beforePath="$PROJECT_DIR$/fsm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fsm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hand_admin_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_admin_side.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand_user_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_user_side.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topics.json" beforeDir="false" afterPath="$PROJECT_DIR$/topics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +112,7 @@
       <workItem from="1715250663663" duration="16394000" />
       <workItem from="1715283819369" duration="3694000" />
       <workItem from="1715331135777" duration="29060000" />
-      <workItem from="1715415259012" duration="8276000" />
+      <workItem from="1715415259012" duration="9167000" />
     </task>
     <task id="LOCAL-00001" summary="Создал каркас бота с одним хендлером">
       <option name="closed" value="true" />
@@ -181,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715416701842</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Сделал добавление тг постов">
+      <option name="closed" value="true" />
+      <created>1715425790980</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715425790980</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +201,8 @@
     <MESSAGE value="Добавил функционал кнопке удалить канал" />
     <MESSAGE value="Добавил функционал кнопке список постов, добавил кнопки выбора канала с постами." />
     <MESSAGE value="Сделал вывод списка постов у тг каналов с кнопками добавления и удаления поста" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал вывод списка постов у тг каналов с кнопками добавления и удаления поста" />
+    <MESSAGE value="Сделал добавление тг постов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал добавление тг постов" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715424608429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

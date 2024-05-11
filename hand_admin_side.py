@@ -1,3 +1,5 @@
+import json
+
 from aiogram.types import Message, CallbackQuery
 from aiogram.utils.deep_linking import create_start_link
 from aiogram import Router, F, Bot
@@ -5,7 +7,7 @@ from aiogram.fsm.context import FSMContext
 
 from keyboard import *
 from support_func import *
-from fsm import AddChannel, DelChannel, AddTopic
+from fsm import AddChannel, AddTopic
 
 router_for_admin = Router()
 valid_users = [5617141084, 1162899410]
@@ -52,20 +54,16 @@ async def catch_id_state(message: Message, state: FSMContext):
     await message.answer("Выберите действие.", reply_markup=kb_admin())
 
 
-@router_for_admin.callback_query(F.data == "delete_chanel")
-async def handling_first_state_del(callback: CallbackQuery, state: FSMContext):
-    await state.set_state(DelChannel.number)
-    await callback.message.answer("Введите номер канала который хотите удалить.")
-    await callback.answer()
+@router_for_admin.callback_query(F.data == "delete_channels")
+async def handling_del(callback: CallbackQuery):
+    with open("channels.json", "w", encoding="utf-8") as file:
+        json.dump({}, file, indent=4)
 
+    with open("topics.json", "w", encoding="utf-8") as file:
+        json.dump({}, file, indent=4)
 
-@router_for_admin.message(DelChannel.number)
-async def catch_number_state(message: Message, state: FSMContext):
-    data = await state.update_data(number=message.text)
-    DelChannel.del_json_channel(data["number"])
-    await state.clear()
-    await message.answer("Канал удален!")
-    await message.answer("Выберите действие.", reply_markup=kb_admin())
+    await callback.message.edit_text("Выберите действие.", reply_markup=kb_admin())
+    await callback.message.answer("Все каналы и посты отчищены!")
 
 
 @router_for_admin.callback_query(F.data == "topics_list")
