@@ -52,20 +52,12 @@ def kb_channels_buttons(mode: str | None = None):
         return builder.as_markup()
 
 
-def kb_list_topics(mode: str | None = None):
-    if mode == "empty":
-        builder = InlineKeyboardBuilder()
+def kb_list_topics():
 
-        builder.button(text="Добавить пост", callback_data="add_topic")
-        builder.button(text="Назад", callback_data="back_to_menu")
+    builder = InlineKeyboardBuilder()
 
-        return builder.as_markup()
-    else:
-        builder = InlineKeyboardBuilder()
+    builder.button(text="Добавить пост", callback_data="add_topic")
+    builder.button(text="Назад", callback_data="back_to_menu")
 
-        builder.button(text="Удалить пост", callback_data="delete_topic")
-        builder.button(text="Добавить пост", callback_data="add_topic")
-        builder.button(text="Назад", callback_data="back_to_menu")
-        builder.adjust(2, 1)
+    return builder.as_markup()
 
-        return builder.as_markup()

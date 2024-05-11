@@ -92,7 +92,7 @@ try:
         if len_topics_current_channel(callback_data.number):
             await callback.message.edit_text(list_for_topics(callback_data.number), reply_markup=kb_list_topics())
         else:
-            await callback.message.edit_text("Список постов этого канала пуст.", reply_markup=kb_list_topics("empty"))
+            await callback.message.edit_text("Список постов этого канала пуст.", reply_markup=kb_list_topics())
 
 
     @router_for_admin.callback_query(F.data == "add_topic")
