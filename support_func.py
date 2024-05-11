@@ -4,7 +4,7 @@ import json
 def pars_json_to_list(json_: dict):
     result_string = ""
     for k, v in json_.items():
-        result_string += f"{k}. {v["full_name"]}\n--------------\n"
+        result_string += f"{k}. {v['full_name']}\n--------------\n"
     return result_string
 
 
@@ -47,6 +47,6 @@ def list_for_topics(number: str):
     count = 1
 
     for i in spec_list:
-        result_string += f"{count}. {i["link"]}\n--------------\n"
+        result_string += f"{count}. {i['link']}\n--------------\n"
         count += 1
     return result_string

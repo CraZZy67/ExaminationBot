@@ -105,13 +105,9 @@ try:
     @router_for_admin.message(AddTopic.link)
     async def catch_state_link(message: Message, state: FSMContext, bot: Bot):
         global current_channel
-        print(current_channel)
         data = await state.update_data(link=message.text)
-        print(data)
         number_for_link = AddTopic.add_json_topic(link=data["link"], number_channel=current_channel)
-        print(number_for_link)
         link = await create_start_link(bot, f"{current_channel}s{number_for_link}")
-        print(link)
         await state.clear()
         await message.answer("Пост добавлен!")
         await message.answer(f"Индивидуальная ссылка для поста: {link}")
