@@ -25,3 +25,29 @@ def exam_len(type_: str):
         return True
     elif json_len == 0:
         return False
+
+
+def len_topics_current_channel(number_channel: str):
+    with open(f"topics.json", "r", encoding="utf-8") as file:
+        json_ = json.loads(file.read())
+
+    len_ = len(json_[number_channel])
+    if len_ > 0:
+        return True
+    else:
+        return False
+
+
+def list_for_topics(number: str):
+    with open("topics.json", "r", encoding="utf-8") as file:
+        json_ = json.loads(file.read())
+
+    spec_list = json_[number]
+    result_string = ""
+    count = 1
+
+    for i in spec_list:
+        result_string += f"{count}. {i["link"]}\n--------------\n"
+        count += 1
+    return result_string
+

@@ -4,8 +4,9 @@ from aiogram.fsm.context import FSMContext
 
 import json
 
-from keyboard import kb_admin, kb_channels_list, kb_channels_buttons
-from support_func import pars_json_to_list, exam_len
+from callback_factory import CallbackChannels
+from keyboard import *
+from support_func import *
 from fsm import AddChannel, DelChannel
 
 router_for_admin = Router()
@@ -74,3 +75,12 @@ async def handling_topics_list(callback: CallbackQuery):
         await callback.message.edit_text("Выберите канал с нужными постами.", reply_markup=kb_channels_buttons())
     else:
         await callback.message.edit_text("Список каналов пуст.", reply_markup=kb_channels_buttons("empty"))
+
+
+@router_for_admin.callback_query(CallbackChannels.filter(F.base == "b"))
+async def handling_channels_buttons(callback: CallbackQuery, callback_data: CallbackChannels):
+    if len_topics_current_channel(callback_data.number):
+        await callback.message.edit_text(list_for_topics(callback_data.number), reply_markup=kb_list_topics())
+    else:
+        await callback.message.edit_text("Список постов этого канала пуст.", reply_markup=kb_list_topics("empty"))
+
