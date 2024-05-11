@@ -9,7 +9,7 @@ from support_func import *
 from fsm import AddChannel, AddTopic
 try:
     router_for_admin = Router()
-    valid_users = [5617141084, 1162899410]
+    valid_users = [5617141084, 1162899410, 5919006420]
     current_channel = str()
 
 

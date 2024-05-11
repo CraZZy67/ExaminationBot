@@ -3,6 +3,8 @@ import os
 from aiogram import Dispatcher, Bot
 from dotenv import load_dotenv
 from aiogram.client.session.aiohttp import AiohttpSession
+
+
 session = AiohttpSession(proxy="http://proxy.server:3128")
 try:
     load_dotenv()
