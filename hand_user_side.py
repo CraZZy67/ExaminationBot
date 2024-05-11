@@ -13,10 +13,10 @@ async def handling_link(message: Message, command: CommandObject, bot: Bot):
     args_list = command.args.split("s")
 
     with open("topics.json", "r", encoding="utf-8") as file:
-        required_link = json.loads(file.read())[args_list[0]][args_list[1]]
+        required_link = json.loads(file.read())[args_list[0]][int(args_list[1]) - 100]["link"]
 
     with open("channels.json", "r", encoding="utf-8") as file:
-        chat_id = json.loads(file.read())[args_list[0]]
+        chat_id = json.loads(file.read())[args_list[0]]["id"]
         examination = await bot.get_chat_member(chat_id=chat_id, user_id=message.from_user.id)
 
     if examination.status == "left":

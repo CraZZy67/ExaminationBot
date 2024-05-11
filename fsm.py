@@ -55,3 +55,20 @@ class DelChannel(StatesGroup):
 
         with open("topics.json", "w", encoding="utf-8") as file:
             json.dump(sorted_json_top, file, indent=4)
+
+
+class AddTopic(StatesGroup):
+    link = State()
+
+    @staticmethod
+    def add_json_topic(link: str, number_channel: str):
+
+        with open("topics.json", "r", encoding="utf-8") as file:
+            json_ = json.loads(file.read())
+        len_json_list = len(json_[number_channel])
+        json_[number_channel].append({"id": len_json_list + 100, "link": link})
+
+        with open("topics.json", "w", encoding="utf-8") as file:
+            json.dump(json_, file, indent=4)
+
+        return len_json_list + 100
