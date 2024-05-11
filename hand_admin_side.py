@@ -1,5 +1,3 @@
-import json
-
 from aiogram.types import Message, CallbackQuery
 from aiogram.utils.deep_linking import create_start_link
 from aiogram import Router, F, Bot

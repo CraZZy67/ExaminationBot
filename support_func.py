@@ -50,4 +50,3 @@ def list_for_topics(number: str):
         result_string += f"{count}. {i["link"]}\n--------------\n"
         count += 1
     return result_string
-

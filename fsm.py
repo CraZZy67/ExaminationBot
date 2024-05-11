@@ -2,8 +2,6 @@ import json
 
 from aiogram.fsm.state import StatesGroup, State
 
-from support_func import sort
-
 
 class AddChannel(StatesGroup):
     id = State()
