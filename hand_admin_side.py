@@ -2,6 +2,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.utils.deep_linking import create_start_link
 from aiogram import Router, F, Bot
 from aiogram.fsm.context import FSMContext
+from aiogram.filters import Command
 
 from keyboard import *
 from support_func import *
@@ -40,6 +41,17 @@ async def handling_first_state(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer("Перешлите любой пост из канала который хотите добавить.")
     await callback.message.answer("И не забудьте добавит бота в администраторы канала!")
     await callback.answer()
+
+
+@router_for_admin.message(Command("cancel"))
+@router_for_admin.message(F.text.casefold() == "cancel")
+async def cancel_handler(message: Message, state: FSMContext):
+    current_state = await state.get_state()
+    if current_state is None:
+        return
+    await state.clear()
+    await message.answer("Совершен выход")
+    await message.answer("Выберите действие.", reply_markup=kb_admin())
 
 
 @router_for_admin.message(AddChannel.id)
