@@ -40,7 +40,7 @@ def kb_channels_buttons(mode: str | None = None):
         builder.button(text="Назад", callback_data="back_to_menu")
         return builder.as_markup()
     else:
-        with open("channels.json", "r", encoding="utf-8") as file:
+        with open("secondary/channels.json", "r", encoding="utf-8") as file:
             json_dict = json.loads(file.read())
 
         builder = InlineKeyboardBuilder()

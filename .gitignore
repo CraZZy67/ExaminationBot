@@ -74,7 +74,7 @@ __pypackages__/
 *.sage.py
 
 # Environments
-.env
+secondary/.env
 .venv
 env/
 venv/

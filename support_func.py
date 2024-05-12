@@ -28,7 +28,7 @@ def exam_len(type_: str):
 
 
 def len_topics_current_channel(number_channel: str):
-    with open(f"topics.json", "r", encoding="utf-8") as file:
+    with open(f"secondary/topics.json", "r", encoding="utf-8") as file:
         json_ = json.loads(file.read())
 
     len_ = len(json_[number_channel])
@@ -39,7 +39,7 @@ def len_topics_current_channel(number_channel: str):
 
 
 def list_for_topics(number: str):
-    with open("topics.json", "r", encoding="utf-8") as file:
+    with open("secondary/topics.json", "r", encoding="utf-8") as file:
         json_ = json.loads(file.read())
 
     spec_list = json_[number]
