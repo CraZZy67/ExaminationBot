@@ -1,4 +1,4 @@
-from aiogram.types import Message, CallbackQuery, Chat
+from aiogram.types import Message, CallbackQuery
 from aiogram.utils.deep_linking import create_start_link
 from aiogram import Router, F, Bot
 from aiogram.fsm.context import FSMContext
@@ -78,7 +78,7 @@ try:
 
     @router_for_admin.callback_query(F.data == "topics_list")
     async def handling_topics_list(callback: CallbackQuery):
-        if exam_len("channels"):
+        if exam_len("data/channels"):
             await callback.message.edit_text("Выберите канал с нужными постами.", reply_markup=kb_channels_buttons())
         else:
             await callback.message.edit_text("Список каналов пуст.", reply_markup=kb_channels_buttons("empty"))

@@ -100,3 +100,5 @@ dmypy.json
 .pytype/
 
 .idea/
+create_bot.py
+

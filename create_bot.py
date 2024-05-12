@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 from aiogram.client.session.aiohttp import AiohttpSession
 
 
-session = AiohttpSession(proxy="http://proxy.server:3128")
+# session = AiohttpSession(proxy="http://proxy.server:3128")
 try:
-    load_dotenv()
+    load_dotenv(dotenv_path="data/.env")
     dp = Dispatcher()
-    bot = Bot(os.getenv("TOKEN"), session=session)
+    bot = Bot(os.getenv("TOKEN"))
 
 except Exception as ex:
     print(f"Возникла ошибка: {ex}, в {__name__}")

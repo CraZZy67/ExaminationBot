@@ -1,5 +1,4 @@
 from aiogram.filters import CommandStart, CommandObject
-from aiogram.utils.markdown import link
 from aiogram import Router, Bot
 from aiogram.types import Message
 
@@ -23,11 +22,12 @@ try:
             chat_id = json.loads(file.read())[args_list[0]]["id"]
             examination = await bot.get_chat_member(chat_id=chat_id, user_id=message.from_user.id)
 
-        hyper_text = link("Я ПОДПИСАЛСЯ", f"https://t.me/examination1_bot?start={command.args}")
         if examination.status == "left":
             await message.answer("Здравствуйте, это бот проверки на спам пользователей, "
                                  f"чтобы дочитать продолжение, подпишитесь на канал - https://t.me/{chat_full_name}. "
-                                 f"После подписки нажмите на эту кнопку: \n\n{hyper_text}", parse_mode="Markdown")
+                                 "После подписки нажмите на эту кнопку: "
+                                 f"\n\n<a href='https://t.me/examination1_bot?start={command.args}'>Я ПОДПИСАЛСЯ</a>",
+                                 parse_mode="HTML")
         else:
             await message.answer(f"Вы успешно прошли проверку. Благодарим за подписку! "
                                  f"Продолжение рассказа: {required_link}")
