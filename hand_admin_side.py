@@ -1,4 +1,4 @@
-from aiogram.types import Message, CallbackQuery
+from aiogram.types import Message, CallbackQuery, Chat
 from aiogram.utils.deep_linking import create_start_link
 from aiogram import Router, F, Bot
 from aiogram.fsm.context import FSMContext
@@ -90,7 +90,8 @@ try:
         current_channel = callback_data.number
 
         if len_topics_current_channel(callback_data.number):
-            await callback.message.edit_text(list_for_topics(callback_data.number), reply_markup=kb_list_topics())
+            await callback.message.edit_text(list_for_topics(callback_data.number), reply_markup=kb_list_topics(),
+                                             disable_web_page_preview=True)
         else:
             await callback.message.edit_text("Список постов этого канала пуст.", reply_markup=kb_list_topics())
 

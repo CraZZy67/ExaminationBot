@@ -7,15 +7,12 @@ import json
 
 
 router_for_user = Router()
-count = 0
 
 try:
     @router_for_user.message(CommandStart(deep_link=True))
     async def handling_link(message: Message, command: CommandObject, bot: Bot):
-        global count
-        count += 1
         args_list = command.args.split("s")
-        print(count)
+
         with open("topics.json", "r", encoding="utf-8") as file:
             required_link = json.loads(file.read())[args_list[0]][int(args_list[1]) - 100]["link"]
 
