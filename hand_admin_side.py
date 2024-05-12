@@ -21,7 +21,7 @@ try:
 
     @router_for_admin.callback_query(F.data == "channels_list")
     async def handling_channels_list(callback: CallbackQuery):
-        with open("secondary/channels.json", "r", encoding="utf-8") as file:
+        with open("data/channels.json", "r", encoding="utf-8") as file:
             channels = json.loads(file.read())
         if len(channels) > 0:
             formated_str = pars_json_to_list(channels)
@@ -66,10 +66,10 @@ try:
 
     @router_for_admin.callback_query(F.data == "delete_channels")
     async def handling_del(callback: CallbackQuery):
-        with open("secondary/channels.json", "w", encoding="utf-8") as file:
+        with open("data/channels.json", "w", encoding="utf-8") as file:
             json.dump({}, file, indent=4)
 
-        with open("secondary/topics.json", "w", encoding="utf-8") as file:
+        with open("data/topics.json", "w", encoding="utf-8") as file:
             json.dump({}, file, indent=4)
 
         await callback.message.edit_text("Выберите действие.", reply_markup=kb_admin())
