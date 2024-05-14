@@ -61,3 +61,9 @@ def kb_list_topics():
 
     return builder.as_markup()
 
+
+def kb_user(url: str):
+    builder = InlineKeyboardBuilder()
+    builder.button(text="Я подписался ✅", url=url)
+    return builder.as_markup()
+

@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Изменил название директории">
+    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Изменил разметку для нормальной обработки нижнего подчеркивания">
+      <change afterPath="$PROJECT_DIR$/data/users_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/channels.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/channels.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/topics.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/topics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand_admin_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_admin_side.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hand_user_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_user_side.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -55,7 +62,7 @@
     &quot;Python.create_bot.executor&quot;: &quot;Debug&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -66,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\BotExam\BotExam\data" />
       <recent name="F:\BotExam\BotExam\secondary" />
     </key>
   </component>
@@ -123,7 +131,10 @@
       <workItem from="1715437653034" duration="2329000" />
       <workItem from="1715449480879" duration="5107000" />
       <workItem from="1715508103404" duration="8172000" />
-      <workItem from="1715521300888" duration="1957000" />
+      <workItem from="1715521300888" duration="3685000" />
+      <workItem from="1715590419275" duration="179000" />
+      <workItem from="1715607859166" duration="7920000" />
+      <workItem from="1715683209359" duration="878000" />
     </task>
     <task id="LOCAL-00001" summary="Создал каркас бота с одним хендлером">
       <option name="closed" value="true" />
@@ -285,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715509151302</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Изменил разметку для нормальной обработки нижнего подчеркивания">
+      <option name="closed" value="true" />
+      <created>1715523625789</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715523625789</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,10 +329,11 @@
     <MESSAGE value="Отключил предпросмотр" />
     <MESSAGE value="Переместил не код файлы в другую директорию" />
     <MESSAGE value="Изменил название директории" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменил название директории" />
+    <MESSAGE value="Изменил разметку для нормальной обработки нижнего подчеркивания" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменил разметку для нормальной обработки нижнего подчеркивания" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715522904159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715683770021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotExam$create_bot.coverage" NAME="create_bot Coverage Results" MODIFIED="1715183166308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

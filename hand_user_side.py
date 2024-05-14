@@ -1,6 +1,7 @@
 from aiogram.filters import CommandStart, CommandObject
 from aiogram import Router, Bot
 from aiogram.types import Message
+from keyboard import kb_user
 
 import json
 
@@ -24,10 +25,8 @@ try:
 
         if examination.status == "left":
             await message.answer("Здравствуйте, это бот проверки на спам пользователей, "
-                                 f"чтобы дочитать продолжение, подпишитесь на канал - https://t.me/{chat_full_name}. "
-                                 "После подписки нажмите на эту кнопку: "
-                                 f"\n\n<a href='https://t.me/examination1_bot?start={command.args}'>Я ПОДПИСАЛСЯ</a>",
-                                 parse_mode="HTML")
+                                 f"чтобы дочитать продолжение, подпишитесь на канал: https://t.me/{chat_full_name}. ",
+                                 reply_markup=kb_user(f'https://t.me/examination1_bot?start={command.args}'))
         else:
             await message.answer(f"Вы успешно прошли проверку. Благодарим за подписку! "
                                  f"Продолжение рассказа: {required_link}")
