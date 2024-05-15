@@ -50,3 +50,20 @@ def list_for_topics(number: str):
         result_string += f"{count}. {i['link']}\n--------------\n"
         count += 1
     return result_string
+
+
+def examination_json_inf(list_: list):
+    with open("data/topics.json", "r", encoding="utf-8") as file:
+        required_link = json.loads(file.read())[list_[0]][int(list_[1]) - 100]["link"]
+
+    with open("data/channels.json", "r", encoding="utf-8") as file:
+        chat_full_name = json.loads(file.read())[list_[0]]["full_name"]
+
+    with open("data/channels.json", "r", encoding="utf-8") as file:
+        chat_id = json.loads(file.read())[list_[0]]["id"]
+
+    result_string_if = ("Здравствуйте, это бот проверки на спам пользователей, "
+                        f"чтобы дочитать продолжение, подпишитесь на канал: https://t.me/{chat_full_name}. ")
+    result_string_else = (f"Вы успешно прошли проверку. Благодарим за подписку! "
+                          f"Продолжение рассказа: {required_link}")
+    return {"id": chat_id, "strings": [result_string_if, result_string_else]}

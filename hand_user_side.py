@@ -3,7 +3,7 @@ from aiogram import Router, Bot
 from aiogram.types import Message
 from keyboard import kb_user
 
-import json
+from support_func import examination_json_inf
 
 
 router_for_user = Router()
@@ -12,24 +12,15 @@ try:
     @router_for_user.message(CommandStart(deep_link=True))
     async def handling_link(message: Message, command: CommandObject, bot: Bot):
         args_list = command.args.split("s")
+        dict_inf = examination_json_inf(args_list)
 
-        with open("data/topics.json", "r", encoding="utf-8") as file:
-            required_link = json.loads(file.read())[args_list[0]][int(args_list[1]) - 100]["link"]
-
-        with open("data/channels.json", "r", encoding="utf-8") as file:
-            chat_full_name = json.loads(file.read())[args_list[0]]["full_name"]
-
-        with open("data/channels.json", "r", encoding="utf-8") as file:
-            chat_id = json.loads(file.read())[args_list[0]]["id"]
-            examination = await bot.get_chat_member(chat_id=chat_id, user_id=message.from_user.id)
+        examination = await bot.get_chat_member(dict_inf["id"], message.from_user.id)
 
         if examination.status == "left":
-            await message.answer("Здравствуйте, это бот проверки на спам пользователей, "
-                                 f"чтобы дочитать продолжение, подпишитесь на канал: https://t.me/{chat_full_name}. ",
+            await message.answer(dict_inf["strings"][0],
                                  reply_markup=kb_user(f'https://t.me/examination1_bot?start={command.args}'))
         else:
-            await message.answer(f"Вы успешно прошли проверку. Благодарим за подписку! "
-                                 f"Продолжение рассказа: {required_link}")
+            await message.answer(dict_inf["strings"][1])
 
 
     @router_for_user.message(CommandStart(ignore_case=True))
