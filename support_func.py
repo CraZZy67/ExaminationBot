@@ -21,10 +21,7 @@ def exam_len(type_: str):
     with open(f"{type_}.json", "r", encoding="utf-8") as file:
         json_len = len(json.loads(file.read()))
 
-    if json_len > 0:
-        return True
-    elif json_len == 0:
-        return False
+    return True if json_len > 0 else False
 
 
 def len_topics_current_channel(number_channel: str):
@@ -32,10 +29,7 @@ def len_topics_current_channel(number_channel: str):
         json_ = json.loads(file.read())
 
     len_ = len(json_[number_channel])
-    if len_ > 0:
-        return True
-    else:
-        return False
+    return True if len_ > 0 else False
 
 
 def list_for_topics(number: str):

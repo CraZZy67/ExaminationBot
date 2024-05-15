@@ -1,7 +1,9 @@
 from aiogram.filters import CommandStart, CommandObject
 from aiogram import Router, Bot
 from aiogram.types import Message
+
 from keyboard import kb_user
+from hand_users_data import add_user
 
 from support_func import examination_json_inf
 
@@ -22,6 +24,8 @@ try:
         else:
             await message.answer(dict_inf["strings"][1])
 
+        username = "None" if message.from_user.username is None else message.from_user.username
+        add_user([username, message.from_user.first_name, message.from_user.id])
 
     @router_for_user.message(CommandStart(ignore_case=True))
     async def handling_start(message: Message):

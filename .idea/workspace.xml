@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Изменил оформление меню у пользователя при просьбе не подписку">
+    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Вынес логику из хендлера в отдельную функцию">
+      <change afterPath="$PROJECT_DIR$/hand_users_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hand_admin_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_admin_side.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hand_user_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_user_side.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/support_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/support_func.py" afterDir="false" />
     </list>
@@ -52,21 +54,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.create_bot.executor": "Debug",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.create_bot.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.hand_users_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\BotExam\BotExam\data" />
@@ -132,7 +135,8 @@
       <workItem from="1715607859166" duration="7920000" />
       <workItem from="1715683209359" duration="878000" />
       <workItem from="1715694700303" duration="2174000" />
-      <workItem from="1715752470280" duration="3273000" />
+      <workItem from="1715752470280" duration="24753000" />
+      <workItem from="1715798957173" duration="3617000" />
     </task>
     <task id="LOCAL-00001" summary="Создал каркас бота с одним хендлером">
       <option name="closed" value="true" />
@@ -302,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715523625789</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Вынес логику из хендлера в отдельную функцию">
+      <option name="closed" value="true" />
+      <created>1715755873746</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715755873746</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,10 +340,12 @@
     <MESSAGE value="Переместил не код файлы в другую директорию" />
     <MESSAGE value="Изменил название директории" />
     <MESSAGE value="Изменил разметку для нормальной обработки нижнего подчеркивания" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменил разметку для нормальной обработки нижнего подчеркивания" />
+    <MESSAGE value="Вынес логику из хендлера в отдельную функцию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вынес логику из хендлера в отдельную функцию" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715755756821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotExam$hand_users_data.coverage" NAME="hand_users_data Coverage Results" MODIFIED="1715767776871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715804240406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotExam$create_bot.coverage" NAME="create_bot Coverage Results" MODIFIED="1715183166308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
