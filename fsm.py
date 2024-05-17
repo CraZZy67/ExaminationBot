@@ -48,3 +48,7 @@ class AddTopic(StatesGroup):
             json.dump(json_, file, indent=4)
 
         return len_json_list + 100
+
+
+class SendMessage(StatesGroup):
+    message = State()

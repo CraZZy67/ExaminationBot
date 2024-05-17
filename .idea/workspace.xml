@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Сделал код более компактным в паре файлов и добавил функционал добавление в csv файл данных о пользователях бота.">
-      <change afterPath="$PROJECT_DIR$/hand_data_base.py" afterDir="false" />
+    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Сделал обработчик команды /users и обработал отчищение базы данных">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/topics.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/topics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand_user_side.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_user_side.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand_users_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_data_func.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fsm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fsm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hand_data_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_data_base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +137,7 @@
       <workItem from="1715694700303" duration="2174000" />
       <workItem from="1715752470280" duration="24753000" />
       <workItem from="1715798957173" duration="4000000" />
-      <workItem from="1715956388049" duration="5193000" />
+      <workItem from="1715956388049" duration="7745000" />
     </task>
     <task id="LOCAL-00001" summary="Создал каркас бота с одним хендлером">
       <option name="closed" value="true" />
@@ -326,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715804603290</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Сделал обработчик команды /users и обработал отчищение базы данных">
+      <option name="closed" value="true" />
+      <created>1715962085097</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715962085097</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,11 +359,12 @@
     <MESSAGE value="Изменил разметку для нормальной обработки нижнего подчеркивания" />
     <MESSAGE value="Вынес логику из хендлера в отдельную функцию" />
     <MESSAGE value="Сделал код более компактным в паре файлов и добавил функционал добавление в csv файл данных о пользователях бота." />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал код более компактным в паре файлов и добавил функционал добавление в csv файл данных о пользователях бота." />
+    <MESSAGE value="Сделал обработчик команды /users и обработал отчищение базы данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал обработчик команды /users и обработал отчищение базы данных" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BotExam$hand_users_data.coverage" NAME="hand_users_data Coverage Results" MODIFIED="1715767776871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715960964965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BotExam$main.coverage" NAME="main Coverage Results" MODIFIED="1715964469001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotExam$create_bot.coverage" NAME="create_bot Coverage Results" MODIFIED="1715183166308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BotExam$users_data_func.coverage" NAME="users_data_func Coverage Results" MODIFIED="1715960475197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
