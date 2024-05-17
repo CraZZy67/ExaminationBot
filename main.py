@@ -3,8 +3,10 @@ from asyncio import run
 from create_bot import bot, dp
 from hand_user_side import router_for_user
 from hand_admin_side import router_for_admin
+from hand_data_base import router_for_db
 
-dp.include_routers(router_for_user, router_for_admin)
+
+dp.include_routers(router_for_user, router_for_admin, router_for_db)
 
 try:
     async def main():

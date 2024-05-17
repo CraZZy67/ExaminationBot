@@ -3,7 +3,7 @@ from aiogram import Router, Bot
 from aiogram.types import Message
 
 from keyboard import kb_user
-from hand_users_data import add_user
+from users_data_func import add_user
 
 from support_func import examination_json_inf
 

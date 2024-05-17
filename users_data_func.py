@@ -26,3 +26,15 @@ def check_added(id_: int):
                 return False
 
     return True
+
+
+def counting_users():
+    with open("data/users_data.csv", "r", encoding="utf-8") as file:
+        len_csv = len(list(csv.reader(file, delimiter=",")))
+
+    return len_csv if len_csv == 0 else len_csv - 1
+
+
+def clear_db():
+    with open("data/users_data.csv", "w", encoding="utf-8") as file:
+        file.write("")
