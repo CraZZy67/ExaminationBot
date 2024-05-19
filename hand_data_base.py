@@ -3,6 +3,7 @@ import csv
 from aiogram.types import Message, CallbackQuery
 from aiogram import Router, F, Bot
 from aiogram.fsm.context import FSMContext
+from aiogram.exceptions import TelegramForbiddenError
 
 from users_data_func import counting_users, clear_db
 from keyboard import kb_actions_db
@@ -38,16 +39,22 @@ try:
     @router_for_db.message(SendMessage.message)
     async def catch_message(message: Message, state: FSMContext, bot: Bot):
         data = await state.update_data(message=message.text)
-
+        banned_users = 0
         with open("data/users_data.csv", "r", encoding="utf-8") as file:
             reader = csv.reader(file, delimiter=",")
             reader.__next__()
-
             for i in reader:
-                await bot.send_message(chat_id=i[2], text=data["message"])
+                try:
+                    await bot.send_message(chat_id=i[2], text=data["message"],
+                                           parse_mode="HTML")
+
+                except TelegramForbiddenError:
+                    banned_users += 1
+                    print(f"Невозможно отправить сообщение пользователю: {banned_users}")
 
         await state.clear()
         await message.answer("Сообщение отправлено!")
+        await message.answer(f"Пользователей с заблокированным ботом: {banned_users}")
         await message.answer(f"Количество пользователей в базе данных: {counting_users()}",
                              reply_markup=kb_actions_db())
 
