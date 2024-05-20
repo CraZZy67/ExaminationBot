@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Сделал функционал для отправки сообщений пользователям">
+    <list default="true" id="45443766-faf0-4c05-81a5-7cd2d75b6ae3" name="Changes" comment="Мелкие изменения">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/channels.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/channels.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/topics.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/topics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand_data_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand_data_base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +58,7 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.users_data_func.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
